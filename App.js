@@ -1,12 +1,22 @@
-import { StatusBar } from "expo-status-bar";
+import "react-native-gesture-handler";
 import { StyleSheet, Text, View } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import LoginScreen from "./screens/LoginScreen";
+import { NavigationContainer } from "@react-navigation/native";
 
+const Stack = createStackNavigator();
+const globalScreenOptions = {
+  headerStyle: { backgroundColor: "#2C6BED" },
+  headerTitleStyle: { color: "white" },
+  headerTintColor: "white",
+};
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Text>LET'S BUILD SIGNAL</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={globalScreenOptions}>
+        <Stack.Screen name="Login" component={LoginScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
