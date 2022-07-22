@@ -20,11 +20,11 @@ const RegisterScreen = ({ navigation }) => {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((authUser) => {
-        authUser.user.update({
+        authUser.user.updateProfile({
           displayName: name,
           photoURL:
             imageUrl ||
-            "https://cencup.com/wp-content/uploads/2019/07/avatar-placeholder.png",
+            "https://images.unsplash.com/photo-1500471929063-235c721eedf6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80",
         });
       })
       .catch((error) => alert(error.message));
@@ -69,7 +69,7 @@ const RegisterScreen = ({ navigation }) => {
         containerStyle={styles.button}
         raised
         onPress={register}
-        title="register"
+        title="Register"
       />
       <View style={{ height: 100 }} />
     </KeyboardAvoidingView>
