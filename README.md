@@ -1,6 +1,6 @@
 # Signal app
 
-This is a messaging app project made for learning react-native
+This is a messaging app project made for learning react-native in 1 week
 
 ## Tech Stack
 
